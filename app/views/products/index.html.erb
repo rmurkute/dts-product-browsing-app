@@ -1,0 +1,55 @@
+
+
+<form action="/products">
+  <fieldset>
+  <legend> Apply Filter: </legend>
+  <div class="row">
+    <div class="column">
+      <label for="brand"> Brand: </label>
+      <input name="brand" value="<%= params[:brand] %>"/>
+    </div>
+
+    <div class="column">
+      <label for="model"> Model: </label>
+      <input name="model" value="<%= params[:model] %>"/>
+    </div>
+  </div>  
+
+  <div class="row">
+    <div class="column">
+      <label for="ram"> RAM: </label>
+      <input type="number" min="1" max="10" name="ram" value="<%= params[:ram] %>"/>
+    </div>
+
+    <div class="column">
+      <label for="external_storage"> External Storage </label> 
+      <input type="number" min="16" max="250" name="external_storage" value="<%= params[:external_storage] %>"/>
+    </div>
+  </div>
+
+  <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+<div id="btnContainer">
+  <%= link_to 'Download as .xlsx', products_path(format: :xlsx, brand: params[:brand],
+                                    model: params[:model], ram: params[:ram], external_storage: params[:external_storage]) %>
+</div>
+
+<table id="product-table">
+  <thead>
+	<tr>
+	  <th> ID </th>
+	  <th> Name </th>
+	  <th> Brand </th>
+	  <th> Model </th>
+	  <th> RAM </th>
+	  <th> External Storage </th>
+	</tr>
+  </thead>
+  <tbody>
+  	<%= render partial: "product", collection: @products %>
+  </tbody>
+</table>
+
+<%= will_paginate @posts %>

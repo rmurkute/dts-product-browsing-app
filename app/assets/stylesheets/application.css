@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: #555;
+}
+
+.content {
+  max-width: 60%;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th, td {
+  padding: 5px;
+}
+
+.btn-export {
+  background-color : #31B0D5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: #46b8da;
+}
+
+#btnContainer {
+  margin-top: 3%;
+  margin-bottom: 1%;
+  float: right;
+}
+
+#filterContainer {
+  float:right;
+}
+
+.left-side{
+	float: left;
+}
+
+.right-side{
+	float: right;
+}
+
+fieldset {
+  background-color: #eeeeee;
+}
+
+legend {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+}
+
+.column {
+  float: left;
+  width: 45%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#product-table {
+  margin-top: 2%;
+}
+
+.pagination{
+  margin-bottom: 3%;
+  margin-top: 3%;
+}

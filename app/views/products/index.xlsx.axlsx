@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Products") do |sheet|
+  sheet.add_row ["ID", "Product Name", "Brand", "Model", "RAM", "External Storage"]
+  @products.each do |product|
+    sheet.add_row [product.id, product.name, product.brand, product.model, product.ram, product.external_storage]
+    sheet.add_hyperlink :location => "http://127.0.0.1:3000/products/#{product.id}", :ref => sheet.rows.last.cells.first
+  end
+end
